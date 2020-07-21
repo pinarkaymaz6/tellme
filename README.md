@@ -28,7 +28,7 @@ Run 'python manage.py migrate' to apply them.```
 - `from polls.models import Question, Choice`
 - `Question.objects.all()` This prints <QuerySet []> which means no data
 - `from django.utils import timezone`
-- `q= Question(question_test = "What is your name?", poll_date=timezone.now())`
+- `q= Question(q_title = "Best gift for a gamer?",q_text="I am looking for cool gift ideas for my fiance who likes video games.",  q_date=timezone.now())`
 - Save the question `q.save()`
 - Run again `Question.objects.all()` and it says <QuerySet [<Question: Question object (1)>]>
 - Go to `models.py` and add `__str__` method into the Question class

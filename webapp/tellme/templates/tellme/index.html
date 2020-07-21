@@ -1,0 +1,11 @@
+{% extends 'tellme/base.html' %} 
+{% block main_content %} 
+    {% if latest_questions %}
+        {% for question in latest_questions %}
+        {{question.q_title}}
+        {% endfor %}
+    {% else %}
+        No questions yet. Please add a few.
+
+    {% endif %} 
+{% endblock %}
