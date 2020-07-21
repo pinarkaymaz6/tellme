@@ -1,13 +1,21 @@
 {% extends 'tellme/base.html' %} 
 {% block main_content %}
-{{question.q_title}}
-{{question.q_text}}
+<h1>{{question.q_title}}</h1>
+<p>{{question.q_text}}</p>
 {% if error_message %}
-    {{error_message}}
+    <p><strong>{{error_message}}</strong></p>
 {% endif %}
+<h4>Advices</h4>
 {% csrf_token %} 
 {% for answer in question.answer_set.all %} 
-    {{answer.a_text}}
+    <li><b>{{answer.a_text}}</b></li>
 {% endfor %}
-<- Back to Question List 
+
+    <form action="{% url 'tellme:add_answer' question.id %}" method="post">
+        {% csrf_token %}
+        
+        <textarea id="answer" name="answer" rows="2" cols="30" placeholder="Enter your answer here..."></textarea>
+        <input type="submit" value="Add" />
+    </form>
+
 {% endblock %}

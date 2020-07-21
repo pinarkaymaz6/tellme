@@ -1,4 +1,18 @@
-{% load static %} 
-{% block main_content %} 
-{% endblock %} 
-{% include 'tellme/footer.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tell Me</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'tellme/style.css' %}" />
+</head>
+
+<body>
+    {% block main_content %}
+    {% endblock %}
+    {% include 'tellme/footer.html' %}
+</body>
+
+</html>

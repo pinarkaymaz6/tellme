@@ -1,11 +1,21 @@
 {% extends 'tellme/base.html' %} 
 {% block main_content %} 
     {% if latest_questions %}
+    <ul>
         {% for question in latest_questions %}
-        {{question.q_title}}
+        <li><a href={% url "tellme:detail" question.id %}><b>{{question.q_title}}</b></a></li>
         {% endfor %}
+    </ul>
     {% else %}
-        No questions yet. Please add a few.
+        <p>No questions yet. Please add a few.</p>
 
-    {% endif %} 
+    {% endif %}
+        <form action="{% url 'tellme:add_question' %}" method="post">
+            {% csrf_token %}
+            <label for="q_title">Question Title</label>
+            <input type="text" id="q_title" name="q_title" placeholder="Enter your title here..." required><br>
+            <label for="q_text">Question Details</label>
+            <textarea id="q_text" name="q_text" rows="1" cols="30" placeholder="Enter your question here..." required></textarea><br>
+            <input type="submit" value="Add" />
+        </form>
 {% endblock %}
