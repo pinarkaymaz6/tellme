@@ -13,13 +13,14 @@ Home View             |  Detail View
     ```
 2. Create a virtual environment
     ```shell
+    cd tellme/
     python3 -m venv env
     source env/bin/activate
     pip install -r requirements.txt
     ```
 3. Start the application. The application should be running at [http://127.0.0.1:8000/tellme/](http://127.0.0.1:8000/tellme/)
     ```shell
-    cd webapp
+    cd webapp/
     python manage.py runserver
     ```
 4. Access admin tool at [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
