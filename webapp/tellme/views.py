@@ -7,7 +7,6 @@ from django.utils import timezone
 # Create your views here.
 
 def index(request):
-    print("INDEX")
     latest_questions = Question.objects.order_by('q_date')[:5]
     context = {'latest_questions':latest_questions}
     return render(request, 'tellme/index.html', context)
@@ -18,11 +17,9 @@ def detail(request, question_id):
     return render(request, 'tellme/detail.html', context)
 
 def add_question(request):
-    print("ADD QUESTION")
     try:
         q_title = request.POST['q_title']
         q_text = request.POST['q_text']
-        print(q_title,q_text)
         question = Question(q_title=q_title, q_text=q_text, q_date=timezone.now())
         question.save()
     except:
