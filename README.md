@@ -1,4 +1,10 @@
 # TellMe
+
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![HitCount](http://hits.dwyl.com/pinarkaymaz6/tellme.svg)](http://hits.dwyl.com/pinarkaymaz6/tellme)
+[![GitHub last commit](https://img.shields.io/github/last-commit/pinarkaymaz6/tellme.svg?style=flat)]()
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg?style=flat-square)](http://makeapullrequest.com)
+
 TellMe is an anonymous Question-Answer platform where people can ask a question or submit their own answers or advices. 
 
 Home View             |  Detail View
